@@ -9,8 +9,6 @@ import { itemsAPIResponse } from "../data/data";
 import { TaxSchema } from "../schemas/TaxFormSchema";
 import "../styles/TaxForm.css";
 import CloseIcon from "@mui/icons-material/Close";
-import SearchIcon from "@mui/icons-material/Search";
-import { TextField, InputAdornment } from "@mui/material";
 
 const TaxForm = () => {
   const { categorized, uncategorized } = categorizeItems(itemsAPIResponse);
@@ -103,17 +101,7 @@ const TaxForm = () => {
           <hr className="border" />
 
           <div className="items container">
-            <TextField
-              variant="outlined"
-              placeholder="Search..."
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <SearchIcon />
-                  </InputAdornment>
-                ),
-              }}
-            />
+            
             {Object.keys(categorized).map((category) => (
               <div key={category} className="category">
                 <div className="checkbox_row">
@@ -222,3 +210,5 @@ const TaxForm = () => {
 };
 
 export default TaxForm;
+
+
